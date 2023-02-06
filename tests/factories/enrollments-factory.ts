@@ -32,6 +32,7 @@ export async function createEnrollmentWithAddress(user?: User) {
   });
 }
 
+
 export function createhAddressWithCEP() {
   return {
     logradouro: "Avenida Brigadeiro Faria Lima",

@@ -27,14 +27,18 @@ async function findTickeWithTypeById(ticketId: number) {
 }
 
 async function findTicketByEnrollmentId(enrollmentId: number) {
-  return prisma.ticket.findFirst({
+  const find = await prisma.ticket.findFirst({
     where: {
-      enrollmentId,
+      enrollmentId: enrollmentId
     },
     include: {
       TicketType: true, //inner join
     }
   });
+
+  
+
+  return find
 }
 
 async function createTicket(ticket: CreateTicketParams) {
